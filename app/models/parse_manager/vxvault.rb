@@ -2,6 +2,8 @@
 
 class ParseManager::Vxvault
 
+	require 'open-uri'
+
 	HTML = "http://vxvault.net"
 	DATES = 0
 	HOSTNAMES = 1
