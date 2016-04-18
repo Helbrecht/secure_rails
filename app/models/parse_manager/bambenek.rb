@@ -5,14 +5,16 @@ class ParseManager::Bambenek
 
 	HTML = "http://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt"
 	DATES = 2
-	TYPES = 1
+	MALWARE = 1
 	HOSTNAMES = 0
 	SOURCE_SCORE = 0.5
 	
 	attr_accessor :records
+	attr_accessor :html
 
 	def initialize
 		@records = []
+		@html = "http://osint.bambenekconsulting.com"
 	end
 
 	def parse_sources
@@ -24,14 +26,15 @@ class ParseManager::Bambenek
 			info = line.gsub("Domain used by ","")
 			splitted_info = info.split(",")
 			values = {}
-			values["type"] = splitted_info[TYPES]
+			values["malware"] = splitted_info[MALWARE]
 			values["hostname"] = splitted_info[HOSTNAMES]
 			values["date"] = splitted_info[DATES]
 			values["source"] = ParseManager::Bambenek.to_s
-			values["source_html"] = HTML
+			values["source_html"] = html
 			@records << Record.new(values)
-			break if line_count == 24
+			break if line_count == 30
 		end
 		@records.map(&:save!)
+		puts @records.count
 	end
 end

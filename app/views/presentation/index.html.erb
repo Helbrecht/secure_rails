@@ -2,9 +2,9 @@
 
 <center>
 	<table border=2 width=50% >
-		<tr><td>Date</td><td>Hostname</td><td>Ip</td><td>Type</td><td>Source</td><td>Score</td></tr>
+		<tr><td>Date</td><td>Hostname</td><td>Ip</td><td>Malware</td><td>Threat</td><td>Source</td><td>Score</td></tr>
 		<% @records.sort_by(&:get_score).reverse.each do |record|%>
-			<tr> <td> <%= record.date %> </td> <td> <%= record.hostname%> </td> <td> <%= record.ip %> </td> <td> <%= record.type %> </td>  <td> <%= record.source_html %> </td> <td> <%= record.get_score %> </td> </tr>
+			<tr> <td> <%= record.date %> </td> <td> <%= record.hostname%> </td> <td> <%= record.ip %> </td> <td> <%= record.malware %> </td> <td> <%= record.threat %> </td> <td> <%= record.source_html %> </td> <td> <%= record.get_score %> </td> </tr>
 		<% end %>
 	</table>
 </center>

@@ -5,7 +5,7 @@ class ParseManager::Alienvault
 	require 'open-uri'
 
 	HTML = "http://reputation.alienvault.com/reputation.generic"
-	TYPES = 2
+	THREAT = 2
 	IPS = 0
 	SOURCE_SCORE = 0.75
 	
@@ -23,7 +23,7 @@ class ParseManager::Alienvault
 			next if line_count < 9
 			info = line.split(" ")
 			values = {}
-			values["type"] = info[TYPES]
+			values["threat"] = info[THREAT]
 			values["ip"] = info[IPS]
 			values["source"] = ParseManager::Alienvault.to_s
 			values["source_html"] = HTML
@@ -31,5 +31,6 @@ class ParseManager::Alienvault
 			break if line_count == 20
 		end
 		@records.map(&:save!)
+		puts @records.count
 	end
 end

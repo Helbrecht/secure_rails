@@ -6,7 +6,7 @@ class ParseManager::MalvareDomainUrls
 
 	HTML = "http://www.malwaredomainlist.com"
 	DATES = 0
-	TYPES = 4
+	MALWARE = 4
 	HOSTNAMES = 1
 	IPS = 2
 
@@ -29,7 +29,7 @@ class ParseManager::MalvareDomainUrls
 			row_tds = row.css("td")
 			values = {}
 			values["date"] = row_tds[DATES].text
-			values["type"] = row_tds[TYPES].text #unless row_tds[TYPES].text == "-"
+			values["malware"] = row_tds[MALWARE].text #unless row_tds[MALWARE].text == "-"
 			values["hostname"] = row_tds[HOSTNAMES].text
 			values["ip"] = row_tds[IPS].text
 			values["source"] = ParseManager::MalvareDomainUrls.to_s
@@ -38,6 +38,7 @@ class ParseManager::MalvareDomainUrls
 			break if index > 10
 		end
 		@records.map(&:save!)
+		puts @records.count
 	end
 
 

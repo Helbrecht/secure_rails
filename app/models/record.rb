@@ -4,14 +4,16 @@ class Record
 
 	DATE_SCORE = 10
 	HOST_SCORE = 20
-	TYPE_SCORE = 20
-	IP_SCORE = 50
+	MALWARE_SCORE = 20
+	THREAT_SCORE = 15
+	IP_SCORE = 35
 
 	field :ip, type: String
 	field :date
 	field :hostname, type: String
 	field :score, type: String
-	field :type, type: String
+	field :malware, type: String
+	field :threat, type: String
 	field :source
 
 	field :source_html, type: String
@@ -26,7 +28,8 @@ class Record
 		score = 0
 		score += self.date.nil? ? 0 : DATE_SCORE
 		score += self.hostname.nil? ? 0 : HOST_SCORE
-		score += self.type.nil? ? 0 : TYPE_SCORE
+		score += self.malware.nil? ? 0 : MALWARE_SCORE
+		score += self.threat.nil? ? 0 : THREAT_SCORE
 		score += ( self.ip.nil? || self.ip == "" ) ? 0 : IP_SCORE
 		score *= get_score_for_source
 		self.score = score

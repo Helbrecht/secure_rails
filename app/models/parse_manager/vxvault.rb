@@ -47,6 +47,7 @@ class ParseManager::Vxvault
 			@records << Record.new(values)
 		end
 		@records.map(&:save!)
+		puts @records.count
 	end
 
 
