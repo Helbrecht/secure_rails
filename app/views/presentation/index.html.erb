@@ -1,10 +1,24 @@
-<button onclick="fuckFunction()"> Click me </button>
+<button onclick="Function()"> Click me </button>
+
+<style media="screen" type="text/css">
+table.fixed { table-layout:fixed; }
+table.fixed td { overflow: hidden; }
+td.aligned {text-align: center; }
+</style>
+
 
 <center>
-	<table border=2 width=50% >
-		<tr><td>Date</td><td>Hostname</td><td>Ip</td><td>Malware</td><td>Threat</td><td>Source</td><td>Score</td></tr>
+	<table class="fixed" border=2 width=75% cellpadding=10 >
+		<col width="22px" />
+    	<col width="60px" />
+    	<col width="18px" />
+    	<col width="20px" />
+    	<col width="40px" />
+    	<col width="40px" />
+    	<col width="8px" />
+		<tr><td class="aligned">Date</td><td>Hostname</td><td>Ip</td><td>Malware</td><td>Threat</td><td>Source</td><td class="aligned">Score</td></tr>
 		<% @records.sort_by(&:get_score).reverse.each do |record|%>
-			<tr> <td> <%= record.date %> </td> <td> <%= record.hostname%> </td> <td> <%= record.ip %> </td> <td> <%= record.malware %> </td> <td> <%= record.threat %> </td> <td> <%= record.source_html %> </td> <td> <%= record.get_score %> </td> </tr>
+			<tr> <td class="aligned"> <%= record.date %> </td> <td> <%= record.hostname%> </td> <td> <%= record.ip %> </td> <td> <%= record.malware %> </td> <td> <%= record.threat %> </td> <td> <%= record.source_html %> </td> <td class="aligned"> <%= record.get_score %> </td> </tr>
 		<% end %>
 	</table>
 </center>

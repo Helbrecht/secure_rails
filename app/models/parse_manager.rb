@@ -6,10 +6,20 @@ class ParseManager
 		puts "Vxvault done"
 		ParseManager::Cctracker.new.parse_sources
 		puts "Cctracker done"
+		ParseManager::Feodo.new.parse_sources
+		puts "Feodo done"
+		ParseManager::Asprox.new.parse_sources
+		puts "Asprox done"
+		ParseManager::Autoshun.new.parse_sources
+		puts "Autoshun done"
 		ParseManager::Zeustracker.new.parse_sources
 		puts "Zeustracker done"
-		ParseManager::Bambenek.new.parse_sources
-		puts "Bambenek done"
+		ParseManager::BambenekDomainList.new.parse_sources
+		puts "Bambenek domain done"
+		ParseManager::BambenekDgaList.new.parse_sources
+		puts "Bambenek dga done"
+		ParseManager::BambenekIpList.new.parse_sources
+		puts "Bambenek ip done"
 		ParseManager::Alienvault.new.parse_sources
 		puts "Alienvault done"
 		ParseManager::MalvareDomainUrls.new.parse_sources
@@ -20,6 +30,10 @@ class ParseManager
 		puts "Ransomware done"
 		ParseManager::Malwaredb.new.parse_sources
 		puts "Malwaredb done"
+		ParseManager::Palevo.new.parse_sources
+		puts "Palevo done"
+		ParseManager::Phishtank.new.parse_sources
+		puts "Phishtank done"
 
 	end
 
