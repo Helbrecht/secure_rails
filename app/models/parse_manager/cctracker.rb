@@ -31,6 +31,7 @@ class ParseManager::Cctracker
 		page = Nokogiri::HTML(open(html))
 		table_with_data = page.css("table").first
 		table_with_data.css("tr").each_with_index do |row,index|
+			break if index == 30
 			next if index == 0
 			row_tds = row.css("td")
 			values = {}

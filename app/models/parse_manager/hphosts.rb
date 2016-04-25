@@ -29,7 +29,7 @@ class ParseManager::Hphosts
 		page = Nokogiri::HTML(open(html))
 		table_with_data = page.css("table.main_normal")
 		table_with_data.css("tr").each_with_index do |row,index|
-			break if index == 102
+			break if index == 30
 			next if index == 0 || index == 1
 		# puts page.css("table")[1].css("tr").first.css("td").first
 		# table_with_data = page.css("table").first

@@ -10,9 +10,11 @@ class ParseManager::Alienvault
 	SOURCE_SCORE = 0.75
 	
 	attr_accessor :records
+	attr_accessor :html
 
 	def initialize
 		@records = []
+		@html = "http://reputation.alienvault.com"
 	end
 
 	def parse_sources
@@ -26,7 +28,7 @@ class ParseManager::Alienvault
 			values["threat"] = info[THREAT]
 			values["ip"] = info[IPS]
 			values["source"] = ParseManager::Alienvault.to_s
-			values["source_html"] = HTML
+			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 20
 		end
