@@ -34,5 +34,4 @@ class ParseManager::DangerRulezSk
 		@records.map(&:save!)
 		puts @records.count
 	end
-	
 end
