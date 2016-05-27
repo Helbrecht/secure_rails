@@ -39,5 +39,10 @@ class Record
 		return self.source_class.constantize::SOURCE_SCORE
 	end
 
+	def get_ip_from_domain
+		ping_result = `ping -c 1 #{self.hostname}`
+		self.domain = ping_result.split(" ")[2].gsub("(","").gsub(")","")
+		self.save!
+	end
 
 end

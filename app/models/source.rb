@@ -27,4 +27,12 @@ class Source
 		self.save!
 	end
 
+	def get_source_name
+		return class_name.gsub("ParseManager::","")
+	end
+
+	def records
+		Record.where(source: class_name)
+	end
+
 end

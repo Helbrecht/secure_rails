@@ -28,7 +28,7 @@ class ParseManager
 		"ParseManager::Cinscore"
 	]
 
-	def self.delet_and_refresh_data(params = {})
+	def self.delete_and_refresh_data(params = {})
 		Record.delete_all
 		SOURCES_NAMES.each do |source_name|
 			source_name.constantize.new.parse_sources
