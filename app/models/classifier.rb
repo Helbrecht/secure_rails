@@ -14,7 +14,7 @@ class Classifier
 					csv_line << [country_data.to_s]
 				end
 			end
-			csv_body << ([source.get_source_name] + csv_line).join(",")
+			csv_body << ([source.get_source_name] + csv_line).join(",") unless csv_line.uniq.length == 1
 		end
 
 		File.write('data_for_class.csv', ([csv_header] + csv_body).join("\n"))
