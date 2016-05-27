@@ -27,7 +27,7 @@ class ParseManager::Feodo
 			values["date"] = row_tds[DATES].text
 			values["malware"] = "Feodo version"+" "+row_tds[MALWARE].text
 			values["ip"] = row_tds[IPS].text
-			values["source"] = ParseManager::Feodo.to_s
+			values["source_class"] = ParseManager::Feodo.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 			break if index == 30

@@ -14,11 +14,11 @@ class Record
 	field :score, type: String
 	field :malware, type: String
 	field :threat, type: String
-	field :source
+	field :source_class
 
 	field :source_html, type: String
 
-	index ({score: 1, hostname: 1, date: 1, ip: 1})
+	index ({score: 1, hostname: 1, date: 1, ip: 1, })
 
 	def to_s
 		"#{@ip} #{@hostname} #{@type}"
@@ -35,9 +35,8 @@ class Record
 		self.score = score
 	end
 
-
 	def get_score_for_source
-		return self.source.constantize::SOURCE_SCORE
+		return self.source_class.constantize::SOURCE_SCORE
 	end
 
 

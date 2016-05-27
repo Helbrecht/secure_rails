@@ -27,7 +27,7 @@ class ParseManager::Alienvault
 			values = {}
 			values["threat"] = info[THREAT]
 			values["ip"] = info[IPS]
-			values["source"] = ParseManager::Alienvault.to_s
+			values["source_class"] = ParseManager::Alienvault.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 20

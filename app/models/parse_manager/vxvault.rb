@@ -43,7 +43,7 @@ class ParseManager::Vxvault
 			#values["type"] = row_tds[TYPES].text
 			values["hostname"] = row_tds[HOSTNAMES].text.gsub!('[D] ','')
 			values["ip"] = row_tds[IPS].css("a").text
-			values["source"] = ParseManager::Vxvault.to_s
+			values["source_class"] = ParseManager::Vxvault.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 		end

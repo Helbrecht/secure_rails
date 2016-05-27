@@ -19,7 +19,7 @@ class ParseManager::BlocklistDeIp
 			line_count += 1
 			values = {}
 			values["ip"] = line.strip
-			values["source"] = ParseManager::BlocklistDeIp.to_s
+			values["source_class"] = ParseManager::BlocklistDeIp.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30

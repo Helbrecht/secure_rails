@@ -26,7 +26,7 @@ class ParseManager::Asprox
 			values["date"] = row_tds[DATES].text
 			values["malware"] = "Asprox C&C"
 			values["ip"] = row_tds[IPS].text
-			values["source"] = ParseManager::Asprox.to_s
+			values["source_class"] = ParseManager::Asprox.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 			break if index == 30

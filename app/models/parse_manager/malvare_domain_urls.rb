@@ -32,7 +32,7 @@ class ParseManager::MalvareDomainUrls
 			values["malware"] = row_tds[MALWARE].text #unless row_tds[MALWARE].text == "-"
 			values["hostname"] = row_tds[HOSTNAMES].text
 			values["ip"] = row_tds[IPS].text
-			values["source"] = ParseManager::MalvareDomainUrls.to_s
+			values["source_class"] = ParseManager::MalvareDomainUrls.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 			break if index > 10

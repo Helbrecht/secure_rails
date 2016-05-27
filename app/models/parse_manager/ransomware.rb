@@ -30,7 +30,7 @@ class ParseManager::Ransomware
 			values["malware"] = row_tds[MALWARE].text
 			values["hostname"] = row_tds[HOSTNAMES].text.strip
 			values["ip"] = ParseManager::ParseHelper.replace_blank_ips (row_tds[IPS].text.split(" ").first)
-			values["source"] = ParseManager::Ransomware.to_s
+			values["source_class"] = ParseManager::Ransomware.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 		end

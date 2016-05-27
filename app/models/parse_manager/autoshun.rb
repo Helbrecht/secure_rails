@@ -24,7 +24,7 @@ class ParseManager::Autoshun
 			values["date"] = row[DATES].text
 			values["threat"] = row[THREAT].text
 			values["ip"] = row[IPS].text
-			values["source"] = ParseManager::Autoshun.to_s
+			values["source_class"] = ParseManager::Autoshun.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 			break if index == 22

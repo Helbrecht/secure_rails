@@ -29,7 +29,7 @@ class ParseManager::Palevo
 			values["malware"] = "Palevo C&C"
 			values["hostname"] = row_tds[HOSTNAMES].text
 			values["ip"] = row_tds[IPS].css("a").text
-			values["source"] = ParseManager::Cctracker.to_s
+			values["source_class"] = ParseManager::Cctracker.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 		end

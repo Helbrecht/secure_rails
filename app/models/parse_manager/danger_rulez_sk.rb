@@ -26,7 +26,7 @@ class ParseManager::DangerRulezSk
 			values["threat"] = "Bruteforce"
 			values["ip"] = info[IPS].strip
 			values["date"] = info[DATES][0,19]
-			values["source"] = ParseManager::DangerRulezSk.to_s
+			values["source_class"] = ParseManager::DangerRulezSk.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 20

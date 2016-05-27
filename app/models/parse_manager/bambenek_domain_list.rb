@@ -29,7 +29,7 @@ class ParseManager::BambenekDomainList
 			values["malware"] = splitted_info[MALWARE]
 			values["hostname"] = splitted_info[HOSTNAMES]
 			values["date"] = splitted_info[DATES]
-			values["source"] = ParseManager::BambenekDomainList.to_s
+			values["source_class"] = ParseManager::BambenekDomainList.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30

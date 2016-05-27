@@ -32,7 +32,7 @@ class ParseManager::Phishtank
 			values["threat"] = "Phishing"
 			values["hostname"] = splitted_info[HOSTNAMES]
 			values["date"] = splitted_info[DATES].gsub("T"," ").gsub("+00:00","")
-			values["source"] = ParseManager::Phishtank.to_s
+			values["source_class"] = ParseManager::Phishtank.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30

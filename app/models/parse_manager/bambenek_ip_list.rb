@@ -29,7 +29,7 @@ class ParseManager::BambenekIpList
 			values["malware"] = splitted_info[MALWARE]
 			values["ip"] = splitted_info[IPS]
 			values["date"] = splitted_info[DATES]
-			values["source"] = ParseManager::BambenekIpList.to_s
+			values["source_class"] = ParseManager::BambenekIpList.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30

@@ -27,7 +27,7 @@ class ParseManager::Cruzit
 			next if line_count < 2 
 			values = {}
 			values["ip"] = line.strip
-			values["source"] = ParseManager::Cruzit.to_s
+			values["source_class"] = ParseManager::Cruzit.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30

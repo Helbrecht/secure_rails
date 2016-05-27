@@ -27,7 +27,7 @@ class ParseManager::Botscout
 			values["threat"] = "Bot"
 			values["ip"] = row_tds[IPS].text
 			next if values["ip"] == "(empty)"
-			values["source"] = ParseManager::Botscout.to_s
+			values["source_class"] = ParseManager::Botscout.to_s
 			values["source_html"] = HTML
 			@records << Record.new(values)
 			break if index == 30

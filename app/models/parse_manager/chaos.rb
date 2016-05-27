@@ -20,7 +20,7 @@ class ParseManager::Chaos
 			line_count += 1
 			values = {}
 			values["ip"] = line[0,15]
-			values["source"] = ParseManager::Chaos.to_s
+			values["source_class"] = ParseManager::Chaos.to_s
 			values["source_html"] = html
 			@records << Record.new(values)
 			break if line_count == 30
